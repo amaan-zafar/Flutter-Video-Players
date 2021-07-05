@@ -12,12 +12,19 @@ class HomeScreen extends StatelessWidget {
           title: Text('Chewie Player'),
           centerTitle: true,
         ),
-        body: Center(
-          child: VideoItems(
-              videoPlayerController:
-                  VideoPlayerController.asset('assets/videos/video.mp4'),
-              looping: true,
-              autoplay: true),
+        body: ListView(
+          children: [
+            VideoItems(
+                videoPlayerController: VideoPlayerController.network(
+                    'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
+                looping: false,
+                autoplay: true),
+            VideoItems(
+                videoPlayerController:
+                    VideoPlayerController.asset('assets/video.mp4'),
+                looping: false,
+                autoplay: true),
+          ],
         ));
   }
 }
