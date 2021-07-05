@@ -12,14 +12,12 @@ class HomeScreen extends StatelessWidget {
           title: Text('Chewie Player'),
           centerTitle: true,
         ),
-        body: ListView(
-          children: [
-            VideoItems(
-                videoPlayerController:
-                    VideoPlayerController.asset('assets/videos/video.mp4'),
-                looping: true,
-                autoplay: true)
-          ],
+        body: Center(
+          child: VideoItems(
+              videoPlayerController:
+                  VideoPlayerController.asset('assets/videos/video.mp4'),
+              looping: true,
+              autoplay: true),
         ));
   }
 }

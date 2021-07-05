@@ -42,12 +42,9 @@ class _VideoItemsState extends State<VideoItems> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Chewie Player'),
-        centerTitle: true,
-      ),
-      body: Chewie(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Chewie(
         controller: _chewieController,
       ),
     );
