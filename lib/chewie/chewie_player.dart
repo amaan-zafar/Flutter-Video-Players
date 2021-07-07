@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_player_chewie/chewie/video_items.dart';
+import 'package:video_player_chewie/chewie/chewie_config.dart';
 
 class ChewiePlayer extends StatelessWidget {
   const ChewiePlayer({Key? key}) : super(key: key);
@@ -14,12 +14,12 @@ class ChewiePlayer extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            // VideoItems(
+            // ChewieConfig(
             //     videoPlayerController: VideoPlayerController.network(
             //         'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
             //     looping: false,
             //     autoplay: true),
-            VideoItems(
+            ChewieConfig(
                 videoPlayerController:
                     VideoPlayerController.asset('assets/video.mp4'),
                 looping: false,

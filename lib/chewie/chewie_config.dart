@@ -2,11 +2,11 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoItems extends StatefulWidget {
+class ChewieConfig extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
   final bool looping;
   final bool autoplay;
-  const VideoItems(
+  const ChewieConfig(
       {Key? key,
       required this.videoPlayerController,
       required this.looping,
@@ -14,10 +14,10 @@ class VideoItems extends StatefulWidget {
       : super(key: key);
 
   @override
-  _VideoItemsState createState() => _VideoItemsState();
+  _ChewieConfigState createState() => _ChewieConfigState();
 }
 
-class _VideoItemsState extends State<VideoItems> {
+class _ChewieConfigState extends State<ChewieConfig> {
   late final _chewieController;
 
   @override
