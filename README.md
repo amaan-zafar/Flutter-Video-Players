@@ -1,6 +1,10 @@
-# video_player_chewie
+# Top 3 Video Players for Flutter App
 
-A new Flutter project.
+Based on the popularity, scores and likes on pub.dev, following are the top 3 video players for flutter :
+
+1. Chewie
+2. Better Player
+3. Flick Player
 
 ## Getting Started
 
