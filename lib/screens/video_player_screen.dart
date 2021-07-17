@@ -19,11 +19,7 @@ class VideoPlayerScreen extends StatelessWidget {
                 children: [
                   Flexible(
                     flex: 2,
-                    child: VideoPlayer(
-                      videoPlayerWidget: videoPlayerModel.playerWidget,
-                      videoUrl:
-                          'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-                    ),
+                    child: videoPlayerModel.playerWidget,
                   ),
                   Flexible(
                       flex: 1,
@@ -33,18 +29,5 @@ class VideoPlayerScreen extends StatelessWidget {
                 ],
               )
             : Column());
-  }
-}
-
-class VideoPlayer extends StatelessWidget {
-  final Widget videoPlayerWidget;
-  final String videoUrl;
-  const VideoPlayer(
-      {Key? key, required this.videoUrl, required this.videoPlayerWidget})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return videoPlayerWidget;
   }
 }

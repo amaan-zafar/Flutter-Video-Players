@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_chewie/flick/flick_landscape_vp.dart';
+import 'package:video_player_chewie/chewie/chewie_player.dart';
+import 'package:video_player_chewie/flick/flick_landscape_player.dart';
 import 'package:video_player_chewie/video_player_model.dart';
 import 'package:video_player_chewie/screens/video_player_screen.dart';
 
@@ -23,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                 context,
                 VideoPlayerModel(
                     playerTitle: 'Chewie Player',
-                    playerWidget: FLickLandscapePlayer(
+                    playerWidget: ChewiePlayer(
                       url: URL,
                     ))),
             _buildButton(

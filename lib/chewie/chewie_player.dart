@@ -2,15 +2,15 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class ChewieConfig extends StatefulWidget {
+class ChewiePlayer extends StatefulWidget {
   final String url;
-  const ChewieConfig({Key? key, required this.url}) : super(key: key);
+  const ChewiePlayer({Key? key, required this.url}) : super(key: key);
 
   @override
-  _ChewieConfigState createState() => _ChewieConfigState();
+  _ChewiePlayerState createState() => _ChewiePlayerState();
 }
 
-class _ChewieConfigState extends State<ChewieConfig> {
+class _ChewiePlayerState extends State<ChewiePlayer> {
   late final _chewieController;
 
   @override
