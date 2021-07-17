@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_chewie/better/better_player.dart';
-import 'package:video_player_chewie/chewie/chewie_player.dart';
+import 'package:video_player_chewie/flick/landscape_player.dart';
+import 'package:video_player_chewie/video_player_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   _navigateToPlayer(
     context,
-    Widget Screen,
+    String playerTitle,
   ) {
     return Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Screen),
+      MaterialPageRoute(builder: (context) => FLickLandscapePlayer()),
     );
   }
 
@@ -25,25 +25,21 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MaterialButton(
-              onPressed: () {
-                _navigateToPlayer(context, ChewiePlayer());
-              },
-              child: Text('Chewie Player'),
-            ),
-            MaterialButton(
-              onPressed: () {
-                _navigateToPlayer(context, BetterPlayer());
-              },
-              child: Text('Better Player'),
-            ),
-            MaterialButton(
-              onPressed: () {},
-              child: Text('Flick Player'),
-            ),
+            _buildButton(context, 'Chewie Player'),
+            _buildButton(context, 'Better Player'),
+            _buildButton(context, 'Flick Player'),
           ],
         ),
       ),
+    );
+  }
+
+  MaterialButton _buildButton(BuildContext context, String playerType) {
+    return MaterialButton(
+      onPressed: () {
+        _navigateToPlayer(context, playerType);
+      },
+      child: Text(playerType),
     );
   }
 }

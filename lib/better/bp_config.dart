@@ -2,11 +2,11 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class ChewieConfig extends StatefulWidget {
+class BPConfig extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
   final bool looping;
   final bool autoplay;
-  const ChewieConfig(
+  const BPConfig(
       {Key? key,
       required this.videoPlayerController,
       required this.looping,
@@ -14,10 +14,10 @@ class ChewieConfig extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ChewieConfigState createState() => _ChewieConfigState();
+  _BPConfigState createState() => _BPConfigState();
 }
 
-class _ChewieConfigState extends State<ChewieConfig> {
+class _BPConfigState extends State<BPConfig> {
   late final _chewieController;
 
   @override
@@ -42,9 +42,8 @@ class _ChewieConfigState extends State<ChewieConfig> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    return AspectRatio(
-      aspectRatio: 16 / 9,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Chewie(
         controller: _chewieController,
       ),
