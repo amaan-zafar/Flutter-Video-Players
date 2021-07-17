@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_chewie/home_screen.dart';
+import 'package:video_player_chewie/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
