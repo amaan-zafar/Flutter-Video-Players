@@ -6,7 +6,8 @@ import 'package:video_player/video_player.dart';
 import 'landscape_player_controls.dart';
 
 class FLickLandscapePlayer extends StatefulWidget {
-  FLickLandscapePlayer({Key? key}) : super(key: key);
+  final String url;
+  FLickLandscapePlayer({Key? key, required this.url}) : super(key: key);
 
   @override
   _FLickLandscapePlayerState createState() => _FLickLandscapePlayerState();
@@ -19,8 +20,7 @@ class _FLickLandscapePlayerState extends State<FLickLandscapePlayer> {
   void initState() {
     super.initState();
     flickManager = FlickManager(
-        videoPlayerController: VideoPlayerController.network(
-            'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'));
+        videoPlayerController: VideoPlayerController.network(widget.url));
   }
 
   @override

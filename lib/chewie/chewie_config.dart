@@ -3,15 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class ChewieConfig extends StatefulWidget {
-  final VideoPlayerController videoPlayerController;
-  final bool looping;
-  final bool autoplay;
-  const ChewieConfig(
-      {Key? key,
-      required this.videoPlayerController,
-      required this.looping,
-      required this.autoplay})
-      : super(key: key);
+  final String url;
+  const ChewieConfig({Key? key, required this.url}) : super(key: key);
 
   @override
   _ChewieConfigState createState() => _ChewieConfigState();
@@ -24,11 +17,11 @@ class _ChewieConfigState extends State<ChewieConfig> {
   void initState() {
     super.initState();
     _chewieController = ChewieController(
-      videoPlayerController: widget.videoPlayerController,
+      videoPlayerController: VideoPlayerController.network(widget.url),
       aspectRatio: 16 / 9,
       autoInitialize: true,
-      autoPlay: widget.autoplay,
-      looping: widget.looping,
+      autoPlay: false,
+      looping: false,
       errorBuilder: (context, errorMessage) {
         return Center(
           child: Text(

@@ -6,6 +6,9 @@ import 'package:video_player_chewie/video_player_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static const String URL =
+      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,17 +23,23 @@ class HomeScreen extends StatelessWidget {
                 context,
                 VideoPlayerModel(
                     playerTitle: 'Chewie Player',
-                    playerWidget: FLickLandscapePlayer())),
+                    playerWidget: FLickLandscapePlayer(
+                      url: URL,
+                    ))),
             _buildButton(
                 context,
                 VideoPlayerModel(
                     playerTitle: 'Better Player',
-                    playerWidget: FLickLandscapePlayer())),
+                    playerWidget: FLickLandscapePlayer(
+                      url: URL,
+                    ))),
             _buildButton(
                 context,
                 VideoPlayerModel(
                     playerTitle: 'Flick Player',
-                    playerWidget: FLickLandscapePlayer())),
+                    playerWidget: FLickLandscapePlayer(
+                      url: URL,
+                    ))),
           ],
         ),
       ),

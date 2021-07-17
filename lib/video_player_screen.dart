@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-import 'package:video_player_chewie/chewie/chewie_config.dart';
 import 'package:video_player_chewie/video_player_model.dart';
 
 class VideoPlayerScreen extends StatelessWidget {
@@ -22,11 +20,7 @@ class VideoPlayerScreen extends StatelessWidget {
                   Flexible(
                     flex: 2,
                     child: VideoPlayer(
-                      videoPlayerWidget: ChewieConfig(
-                          videoPlayerController: VideoPlayerController.network(
-                              'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4'),
-                          looping: false,
-                          autoplay: true),
+                      videoPlayerWidget: videoPlayerModel.playerWidget,
                       videoUrl:
                           'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
                     ),
