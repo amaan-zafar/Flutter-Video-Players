@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player_chewie/better/better_player.dart';
 import 'package:video_player_chewie/chewie/chewie_player.dart';
 import 'package:video_player_chewie/flick/flick_landscape_player.dart';
 import 'package:video_player_chewie/video_player_model.dart';
@@ -27,13 +29,15 @@ class HomeScreen extends StatelessWidget {
                     playerWidget: ChewiePlayer(
                       url: URL,
                     ))),
-            _buildButton(
-                context,
-                VideoPlayerModel(
-                    playerTitle: 'Better Player',
-                    playerWidget: FLickLandscapePlayer(
-                      url: URL,
-                    ))),
+            kIsWeb
+                ? Container()
+                : _buildButton(
+                    context,
+                    VideoPlayerModel(
+                        playerTitle: 'Better Player',
+                        playerWidget: BPPlayer(
+                          url: URL,
+                        ))),
             _buildButton(
                 context,
                 VideoPlayerModel(
