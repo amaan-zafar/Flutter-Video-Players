@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:video_player_chewie/flick/landscape_player.dart';
+import 'package:video_player_chewie/flick/flick_landscape_vp.dart';
+import 'package:video_player_chewie/video_player_model.dart';
 import 'package:video_player_chewie/video_player_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
-  _navigateToPlayer(
-    context,
-    String playerTitle,
-  ) {
-    return Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => FLickLandscapePlayer()),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,21 +16,40 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildButton(context, 'Chewie Player'),
-            _buildButton(context, 'Better Player'),
-            _buildButton(context, 'Flick Player'),
+            _buildButton(
+                context,
+                VideoPlayerModel(
+                    playerTitle: 'Chewie Player',
+                    playerWidget: FLickLandscapePlayer())),
+            _buildButton(
+                context,
+                VideoPlayerModel(
+                    playerTitle: 'Better Player',
+                    playerWidget: FLickLandscapePlayer())),
+            _buildButton(
+                context,
+                VideoPlayerModel(
+                    playerTitle: 'Flick Player',
+                    playerWidget: FLickLandscapePlayer())),
           ],
         ),
       ),
     );
   }
 
-  MaterialButton _buildButton(BuildContext context, String playerType) {
+  MaterialButton _buildButton(
+      BuildContext context, VideoPlayerModel videoPlayerModel) {
     return MaterialButton(
       onPressed: () {
-        _navigateToPlayer(context, playerType);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => VideoPlayerScreen(
+                    videoPlayerModel: videoPlayerModel,
+                  )),
+        );
       },
-      child: Text(playerType),
+      child: Text(videoPlayerModel.playerTitle),
     );
   }
 }

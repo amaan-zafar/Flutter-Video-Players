@@ -42,7 +42,6 @@ class _ChewieConfigState extends State<ChewieConfig> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     return AspectRatio(
       aspectRatio: 16 / 9,
       child: Chewie(
